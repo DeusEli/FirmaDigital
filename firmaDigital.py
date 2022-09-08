@@ -13,8 +13,10 @@ def firm(msg):
         digest=SHA.new()
         
         digest.update(msg)
+        print("\n")
         print("Contenido del documento: ", msg)
         print("Se generó el HASH: ", digest.hexdigest())
+        print("\n")
         
         sign=signer.sign(digest)
         
@@ -27,9 +29,11 @@ def firm(msg):
         f.close()
         
     print("Se guardó la firma en el archivo Signature.txt")
+    print("\n")
     return signature
 
 def CreateFirm():
+    print("\n")
     documentData = input("Ingrese el contenido del documento a firmar: ")
     with open('Documento.txt', 'w') as f:
         f.write(documentData)
@@ -41,5 +45,3 @@ def CreateFirm():
         
     msg=msg.encode()
     firm(msg)
-    
-CreateFirm()
