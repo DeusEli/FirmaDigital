@@ -17,21 +17,26 @@ def verify(msg, firm):
 		is_verify=signer.verify(digest, base64.b64decode(firm))
   
 		if is_verify:
+			print("\n")
 			print("La firma es válida")
 			print("El documento no ha sido modificado")
 			print("El documento es auténtico")
+			print("\n")
 		else:
+			print("\n")
 			print("La firma no es válida")
 			print("El documento ha sido modificado")
 			print("El documento no es auténtico")
+			print("\n")
 
-with open ('Documento.txt') as f:
-	msg=f.read()
-	f.close()
-
-with open ('Signature.txt') as f:
-	firm=f.read()
-	f.close()
-
-msg=msg.encode()
-verify(msg, firm)
+def VerifyFirm():
+	with open('Documento.txt') as f:
+		msg=f.read()
+		f.close()
+  
+	with open('Signature.txt') as f:
+		firm=f.read()
+		f.close()
+  
+	msg=msg.encode()
+	verify(msg, firm)

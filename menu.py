@@ -1,8 +1,12 @@
 from createKey import CreateKeys
 from firmaDigital import CreateFirm
+from verify import VerifyFirm
 
 option = 0
 
+print("\n")
+print("Bienvenido al sistema de firma digital")
+print("\n")
 while option != 4:
 	print("Menú")
 	print("1. Crear llaves")
@@ -21,6 +25,7 @@ while option != 4:
 	elif option == 3:
 		print("\n")
 		print("Opción 3")
+		VerifyFirm()
 	elif option == 4:
 		print("\n")
 		print("Adiós")
